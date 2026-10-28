@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JS Events</title></head><body>
+<button id="b">Show date/time</button> <span id="d"></span>
+<p><input id="t"> <button onclick="v()">Submit</button> <span id="m" style="color:red"></span></p>
+<button onclick="setCookie('user','Ashwini',7);console.log('set')">Set</button>
+<button onclick="alert(getCookie('user'))">Get</button>
+<button onclick="checkCookie()">Check</button>
+<p>(Cookies need http://, not file://. Open the console to see console.log output.)</p>
+<pre id="j"></pre>
+<script>
+document.getElementById("b").addEventListener("click",function(){document.getElementById("d").textContent=new Date()});
+function v(){var x=document.getElementById("t").value;console.log("value:",x);
+ document.getElementById("m").textContent=x===""?"Text box must not be empty":""}
+function setCookie(n,val,d){var e=new Date(Date.now()+d*864e5);document.cookie=n+"="+val+";expires="+e.toUTCString()+";path=/"}
+function getCookie(n){var m=document.cookie.match(new RegExp("(^| )"+n+"=([^;]+)"));return m?m[2]:""}
+function checkCookie(){alert(getCookie("user")?"Welcome "+getCookie("user"):"No cookie")}
+var student={name:"Ashwini",skills:{tool:"Postman"}};
+document.getElementById("j").textContent=student.name+", "+student.skills.tool;
+</script></body></html>

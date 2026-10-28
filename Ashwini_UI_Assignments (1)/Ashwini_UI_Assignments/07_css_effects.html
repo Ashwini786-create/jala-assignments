@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CSS Effects</title>
+<style>
+.img{width:100px;height:100px;box-shadow:5px 5px 10px gray;opacity:.6;cursor:pointer}
+.img:hover{box-shadow:0 0 15px teal;opacity:1}
+.anim{width:60px;height:60px;background:orange;position:relative;animation-name:move;animation-duration:2s;animation-iteration-count:3;animation-delay:1s}
+@keyframes move{to{left:200px}}
+.pg a{display:inline-block;padding:6px 12px;border:1px solid #999;color:#000;text-decoration:none}.pg a:hover{background:#ccc}
+.pg.sp a{margin:0 4px}
+.rel{position:relative;top:10px;background:#cfc}.abs{position:absolute;right:10px;top:10px;background:#fcc}
+.fix{position:fixed;bottom:10px;right:10px;background:#cff}.stk{position:sticky;top:0;background:#ff9}
+.scroll{width:250px;height:60px;overflow:scroll;border:1px solid #000}
+</style></head><body style="height:1500px">
+<img class="img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='36' fill='teal'/%3E%3C/svg%3E" alt="shadow and opacity">
+<div class="anim"></div>
+<div class="pg"><a href="#">1</a><a href="#">2</a><a href="#">3</a> (no spaces)</div>
+<div class="pg sp"><a href="#">1</a><a href="#">2</a><a href="#">3</a> (with spaces)</div>
+<p style="position:static">static</p><p class="rel">relative</p><p class="abs">absolute</p>
+<p class="fix">fixed</p><p class="stk">sticky</p>
+<div class="scroll">Long text to overflow the box. Long text to overflow the box. Long text to overflow the box. Long text to overflow the box.</div>
+</body></html>

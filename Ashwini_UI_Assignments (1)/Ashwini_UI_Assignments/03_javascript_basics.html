@@ -1,0 +1,17 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JS Basics</title></head><body>
+<ul id="list"></ul><button onclick="sortDesc()">Sort Descending</button><pre id="out"></pre>
+<script>
+// single-line comment
+/* strict mode: undeclared variables throw an error */
+var fruits=["Banana","Apple","Mango","Cherry"];
+var ul=document.getElementById("list");
+function show(){ul.innerHTML=fruits.map(function(f){return "<li>"+f+"</li>"}).join("")}
+function sortDesc(){fruits.sort().reverse();show()}
+show();
+var person={firstname:"Ashwini",lastname:"T"},o="";
+for(var k in person){o+=k+": "+person[k]+"\n"}            // for/in
+o+=person.firstname+" "+person["lastname"]+"\n";          // dot and bracket access
+function hoist(){y=5; var y; return y}  // hoisting: declaration moves up
+try{ eval("'use strict'; undeclared=1") }catch(e){o+="Strict error: "+e.message}
+document.getElementById("out").textContent=o;
+</script></body></html>

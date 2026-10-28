@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CSS Page Adjustments</title>
+<style>
+html{scroll-behavior:smooth}
+table{border:2px solid #000}td{border:1px solid #000}table:hover{background:gold}
+.tall{height:700px;background:linear-gradient(#cde,#fed)}
+.m{margin:30px;padding:10px;background:#ddd;border:1px solid #000}
+.bg{height:150px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='36' fill='teal'/%3E%3C/svg%3E") left top no-repeat,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='36' fill='teal'/%3E%3C/svg%3E") right bottom no-repeat,#fee;background-size:60px,100px}
+</style></head><body id="top">
+<table><tr><td>Hover the table</td><td>Cell</td></tr></table>
+<p>visibility:hidden keeps space; display:none removes it.</p>
+<p>A<span style="visibility:hidden">hidden</span>B | A<span style="display:none">none</span>B</p>
+<span style="display:block">block</span><span style="display:inline">inline</span><span style="display:list-item">list-item</span>
+<p><a href="#bottom">click to go to bottom of page</a></p>
+<div class="tall">Long page</div>
+<div class="m">margin 30px (outside) / padding 10px (inside)</div>
+<div class="bg">Multiple backgrounds</div>
+<p id="bottom"><a href="#top">click to go to top of page</a></p>
+</body></html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JS Access and Properties</title></head><body>
+<button onclick="this.style.display='none'">Click: I disappear (this)</button>
+<p>Counter: <span id="c">0</span> <button onclick="inc()">Count</button></p>
+<p>Getter/setter counter: <span id="g">0</span> <button onclick="obj.count++;g.textContent=obj.count">+</button></p>
+<pre id="out"></pre>
+<script>
+var n=0;function inc(){document.getElementById("c").textContent=++n}
+var obj={_c:0,get count(){return this._c},set count(v){this._c=v}};
+function hi(a,b){return this.name+" "+a+" "+b}
+var p={name:"Ashwini"};
+function Person(f){this.first=f}
+Person.prototype.country="India"; // add property via prototype
+var q=new Person("A");
+document.getElementById("out").textContent=
+ "call: "+hi.call(p,"x","y")+"\napply: "+hi.apply(p,["x","y"])+
+ "\n(call takes args separately, apply takes an array)\nprototype: "+q.country;
+</script></body></html>
